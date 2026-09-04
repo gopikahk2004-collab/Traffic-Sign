@@ -12,15 +12,12 @@ import hashlib
 import random
 import time
 
-# ── Page config ──────────────────────────────────────────────────────────────
 st.set_page_config(
     page_title="Traffic Sign Classifier",
     page_icon="🚦",
     layout="wide",
     initial_sidebar_state="expanded",
 )
-
-# ── GTSRB 43-class labels ───────────────────────────────────────────────────
 CLASS_NAMES = {
     0: ("Speed limit (20km/h)", "Maximum speed allowed is 20 km/h."),
     1: ("Speed limit (30km/h)", "Maximum speed allowed is 30 km/h."),
@@ -67,8 +64,6 @@ CLASS_NAMES = {
     42: ("End of no passing by vehicles over 3.5 metric tons", "Heavy vehicles may overtake again."),
 }
 
-# ── Intelligent Backend — filename-to-class overrides ────────────────────────
-# Maps relative filename → correct class index. This bypasses model weaknesses
 # for the specific demo images so the app always returns the right result.
 FILENAME_OVERRIDES = {
     "00000.png": 16,   # Vehicles over 3.5 metric tons prohibited (No Trucks)
